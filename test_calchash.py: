@@ -1,0 +1,25 @@
+import pytest
+from calchash import hash_file
+
+def test_hash_file():
+    """
+    Test hash_file() with a file that has a known hash.
+    
+    Compares the hash computed by hash_file() to a known expected value.
+    Asserts the computed hash matches the known hash.
+    """
+
+    known_hash = "2fd4e1c67a2d28fced849ee1bb76e7391b93eb12"
+    computed_hash = hash_file("test.txt")
+    assert computed_hash == known_hash
+
+
+def test_hash_file_invalid():
+    """
+    Test hash_file() with a file that does not exist.
+    
+    Tries to compute the hash of a non-existent file.
+    Asserts this raises a FileNotFoundError.
+    """
+        with pytest.raises(FileNotFoundError):
+        hash_file("invalid.txt")
