@@ -1,8 +1,16 @@
 import hashlib 
  
 def hash_file(filename): 
-   """"This function returns the SHA-1 hash 
-   of the file passed into it""" 
+   
+  """
+  Calculates and returns the SHA-1 hash of the file.
+  
+  Parameters:
+    filename (str): The path to the file to hash
+    
+  Returns:
+    str: The hexadecimal string representation of the SHA-1 hash
+  """
  
    # make a hash object 
    h = hashlib.sha1() 
